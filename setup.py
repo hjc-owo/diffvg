@@ -37,6 +37,7 @@ class Build(build_ext):
             include_path = info['include']
             cmake_args = ['-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=' + extdir,
                           '-DPYTHON_LIBRARY=' + get_config_var('LIBDIR'),
+                          '-DPYTHON_INCLUDE_DIRS=' + include_path,
                           '-DPYTHON_INCLUDE_PATH=' + include_path]
 
             cfg = 'Debug' if self.debug else 'Release'
